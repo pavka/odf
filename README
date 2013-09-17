@@ -1,0 +1,22 @@
+Object Detection Framework (ODF)
+================================
+
+ODF is a C++ framework created around OpenCV that simplifies object detection
+and batch image processing.
+
+COMPILING
+---------
+To compile the ODF library, create a build dir, and in the build dir call:
+    cmake /path/to/odf
+
+Then execute one or more of the following commands:
+    # to build ODF as shared library
+    make
+
+    # to build ODF as static library
+    make odf-static
+
+    # to build example applications
+    make samples
+
+More details can be found in the INSTALL file.

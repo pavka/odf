@@ -1,4 +1,0 @@
-odf
-===
-
-Object Detection Framework

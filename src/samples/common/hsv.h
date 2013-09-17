@@ -1,6 +1,7 @@
+/*
 The MIT License (MIT)
 
-Copyright (c) 2013 pavka
+Copyright (c) 2013 Pavel Březina
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -18,3 +19,16 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+#ifndef HSV_H_
+#define HSV_H_
+
+#include <odf/image.h>
+
+/* Shortcut HSV conversion macros */
+#define _H(value) ODF_CONV_HUE(value)
+#define _S(value) ODF_CONV_SAT(value)
+#define _V(value) ODF_CONV_VAL(value)
+
+#endif /* HSV_H_ */

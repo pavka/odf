@@ -1,0 +1,68 @@
+How to build ODF from source
+
+1. Requirements
+
+In order to build ODF, you need to install several components:
+
+- A C compiler
+- CMake (http://www.cmake.org) >= 2.8.0.
+- OpenCV library (http://opencv.org) >= 2.4
+
+Note that these version numbers are version we know works correctly. If you
+build and run cmocka successfully with an older version, please let us know.
+
+2. Building
+
+First, you need to configure the compilation, using CMake. Go inside the
+`build` dir. Create it if it doesn't exist.
+
+GNU/Linux, MacOS X, MSYS/MinGW:
+
+    cd <odf_source>/build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug ..
+    
+    # make ODF as shared library
+    make
+    
+    # make ODF as static library
+    make odf-static
+    
+    # make samples
+    make samples
+
+3. CMake standard options
+
+Here is a list of the most interesting options provided out of the box by
+CMake.
+
+- CMAKE_BUILD_TYPE:     The type of build (can be Debug Release MinSizeRel
+                        RelWithDebInfo)
+- CMAKE_INSTALL_PREFIX: The prefix to use when running make install (Default
+                        to /usr/local on GNU/Linux and MacOS X)
+- CMAKE_C_COMPILER:     The path to the C compiler
+- CMAKE_CXX_COMPILER:   The path to the C++ compiler
+
+4. CMake options defined for ODF
+
+- WITH_OPENCV_DIR: path to OpenCV libraries
+
+They can be changed with the -D option:
+
+`cmake -DOpenCV_DIR=/usr/local/lib/opencv ..`
+
+5. Browsing/editing CMake options
+
+In addition to passing options on the command line, you can browse and edit
+CMake options using `cmakesetup` (Windows), `cmake-gui` or `ccmake` (GNU/Linux
+and MacOS X).
+
+- Go to the build dir
+- On Windows: run `cmakesetup`
+- On GNU/Linux and MacOS X: run `ccmake ..`
+
+6. Installing
+
+If you want to install ODF shared library after compilation run:
+
+    make install
+    
